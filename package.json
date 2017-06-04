@@ -1,8 +1,8 @@
 {
-  "name": "linuxplus",
+  "name": "linux-plus-quizzer",
   "version": "1.0.0",
   "description": "testing linux quizzer",
-  "main": "server.js",
+  "main": "express-server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -12,12 +12,17 @@
     "url": "git+https://github.com/jkinney23/linux-plus-quizzer.git"
   },
   "author": "Jason Kinney <jkinney23@yahoo.ca>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jkinney23/linux-plus-quizzer/issues"
   },
   "engines": {
     "node": "8.0.0"
   },
-  "homepage": "https://github.com/jkinney23/linux-plus-quizzer#readme"
+  "homepage": "https://github.com/jkinney23/linux-plus-quizzer#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "express-favicon": "^2.0.0"
+  },
+  "devDependencies": {}
 }
