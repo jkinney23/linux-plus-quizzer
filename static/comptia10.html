@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang=en>
 <head>
     <meta charset=utf-8>
-    <title>Linux+ Chapter 1</title>
+    <title>Linux+ Chapter 10</title>
     <script src=https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js></script>
     <style>
         body{
@@ -78,7 +78,7 @@
 </head>
 <body>
     <div class=header>
-        <span class=title>Chapter 1</span>
+        <span class=title>Chapter 10</span>
     </div>
     <div id=quiz_wrap></div>
     <div id=u style=display:none></div>
@@ -95,20 +95,21 @@
                     "created": "2015-02-21T13:02:21Z", 
                     "prompt": {
                         "answers": [
-                            "Retype the command, and be sure you type the filename correctly, letter by letter.", 
-                            "Retype the command, but press the Tab key after typing a few letters of the long filename to ensure that the filename is entered correctly.", 
-                            "Press the Up arrow key, and use bash’s editing features to correct the typo.", 
-                            "Any of the above.", 
-                            "None of the above."], 
-                        "question": "<p>\n\t<span>You type a command into bash and pass a long filename to it, but after you enter the command, you receive a File not found error message because of a typo in the filename. How might you proceed?</span>\n</p>", 
-                        "feedbacks": ["Incorrect.", "Incorrect.", "Incorrect.", "Correct.", "Incorrect."], 
+                            "Everything’s OK; the presence of sshd ensures that data are being encrypted via SSH.", 
+                            "The sendmail and sshd servers are OK, but the FTP protocol used by proftpd is insecure and should never be used.", 
+                            "The sendmail server should be replaced by Postfix or qmail for improved security, but sshd and proftpd are fine.", 
+                            "Because sendmail and proftpd both use unencrypted text-mode data transfers, neither is appropriate on a network-connected computer.", 
+                            "No conclusion can be drawn without further information; the listed servers may or may not be appropriate or authentic."
+                        ], 
+                        "question": "<p>\n\t<span>Typing lsof -i | grep LISTEN  as root produces three lines of output, corresponding to the sendmail, sshd, and proftpd servers. What can you conclude about the security of this system?</span>\n</p>", 
+                        "feedbacks": ["Incorrect.", "Incorrect.", "Incorrect.", "Incorrect.", "Correct."], 
                         "relatedLectureIds": []
                     }, 
-                    "correct_response": ["d"], 
+                    "correct_response": ["e"], 
                     "score": 1.0, 
                     "updated": "2015-02-21T13:02:21Z", 
                     "old_assessment_type": null, 
-                    "question_plain": "You type a command into bash and pass a long filename to it, but after you enter the command, you receive a File not found error message because of a typo in the filename. How might you proceed?", 
+                    "question_plain": "Typing lsof -i | grep LISTEN  as root produces three lines of output, corresponding to the sendmail, sshd, and proftpd servers. What can you conclude about the security of this system?", 
                     "related_lectures": []
                 },
                 {
@@ -118,20 +119,20 @@
                     "created": "2015-02-21T13:02:21Z", 
                     "prompt": {
                         "answers": [
-                            "cat", 
-                            "less", 
-                            "tee", 
-                            "sed", 
-                            "echo"], 
-                        "question": "<p>\n\t<span>Which of the following commands is implemented as an internal command in bash?</span>\n</p>", 
-                        "feedbacks": ["Incorrect.", "Incorrect.", "Incorrect.", "Incorrect.", "Correct."], 
+                            "Back up /etc/passwd on the target systems to eliminate the possibility of its being damaged.", 
+                            "Obtain the root passwords to the target systems so that you can properly configure them to accept the Nmap probes.", 
+                            "Obtain written permission from your boss to perform the Nmap sweep.", 
+                            "Configure /etc/sudoers on the computer you intend to use for the sweep, to give yourself the ability to run Nmap.", 
+                            "Disable any firewall between the computer that’s running Nmap and the servers you intend to scan."], 
+                        "question": "<p>\n\t<span>As part of a security audit, you plan to use Nmap to check all the computers on your network for unnecessary servers. Which of the following tasks should you do prior to running your Nmap check?</span>\n</p>", 
+                        "feedbacks": ["Incorrect.", "Incorrect.", "Correct.", "Incorrect.", "Incorrect."], 
                         "relatedLectureIds": []
                     }, 
-                    "correct_response": ["e"], 
+                    "correct_response": ["c"], 
                     "score": 1.0, 
                     "updated": "2015-02-21T13:02:21Z", 
                     "old_assessment_type": null, 
-                    "question_plain": "Which of the following commands is implemented as an internal command in bash?", 
+                    "question_plain": "As part of a security audit, you plan to use Nmap to check all the computers on your network for unnecessary servers. Which of the following tasks should you do prior to running your Nmap check?", 
                     "related_lectures": []
                 },
                 {
@@ -141,21 +142,21 @@
                     "created": "2015-02-21T13:02:21Z", 
                     "prompt": {
                         "answers": [
-                            "No currently running processes are associated with your shell, so you may log out without terminating them.", 
-                            "The remote computer PROC isn’t accepting connections; you should contact its administrator to correct the problem.", 
-                            "Your computer is handling too many processes; you must kill some of them to regain control of the computer.", 
-                            "Your central processing unit (CPU) is defective and must be replaced as soon as possible.", 
-                            "You, one of your configuration files, or a program you’ve run has set the $PROC environment variable to Go away."
+                            "/etc/limits.conf", 
+                            "/etc/pam/limits.conf", 
+                            "/etc/security/limits.conf", 
+                            "/etc/security/pam/limits.conf", 
+                            "/usr/local/limits.conf"
                         ], 
-                        "question": "<p>\n\t<span>You type <strong>echo $PROC</strong>, and the computer replies <strong>Go away</strong>. What does this mean?</span>\n</p>", 
-                        "feedbacks": ["Incorrect.", "Incorrect.", "Incorrect.", "Incorrect.", "Correct."], 
+                        "question": "<p>\n\t<span> Your login server is using PAM, and you want to limit users’ access to system resources. Which configuration file will you need to edit?</span>\n</p>", 
+                        "feedbacks": ["Incorrect.", "Incorrect.", "Correct.", "Incorrect.", "Incorrect."], 
                         "relatedLectureIds": []
                     }, 
-                    "correct_response": ["e"], 
+                    "correct_response": ["c"], 
                     "score": 1.0, 
                     "updated": "2015-02-21T13:02:21Z", 
                     "old_assessment_type": null, 
-                    "question_plain": "You type echo $PROC , and the computer replies Go away. What does this mean?", 
+                    "question_plain": " Your login server is using PAM, and you want to limit users’ access to system resources. Which configuration file will you need to edit?", 
                     "related_lectures": []
                 },
                 {
@@ -164,22 +165,23 @@
                     "assessment_type": "multiple-choice", 
                     "created": "2015-02-04T22:17:21Z", 
                     "prompt": {
-                        "question": "<p>\n\t<span>What does the <strong>pwd</strong> command accomplish?</span>\n</p>", 
+                        "question": "<p>\n\t<span>Which of the following tools might you use to check for open ports on a local computer? (Select three.)</span>\n</p>", 
                         "relatedLectureIds": [], 
                         "answers": [
-							"It prints the name of the working directory.", 
-							"It changes the current working directory.",
-							"It prints wide displays on narrow paper.",
-							"It parses Web page URLs for display.",
-							"It prints the terminal’s width in characters."
+							"nmap", 
+							"netstat",
+							"lsof",
+							"portmap",
+							"services",
+							"abc"
 						],
-						"feedbacks": ["Correct.", "Incorrect.", "Incorrect.", "Incorrect.", "Incorrect."]							
+						"feedbacks": ["Incorrect.", "Incorrect.", "Incorrect.", "Incorrect.", "Incorrect.", "Correct."]							
                     }, 
-                    "correct_response": ["a"], 
+                    "correct_response": ["f"], 
                     "score": 1.0, 
                     "updated": "2015-02-04T22:17:21Z", 
                     "old_assessment_type": null, 
-                    "question_plain": "What does the pwd command accomplish?", 
+                    "question_plain": "Which of the following tools might you use to check for open ports on a local computer? (Select three.)", 
                     "related_lectures": []
                 },
                 {
@@ -188,22 +190,22 @@
                     "assessment_type": "multiple-choice", 
                     "created": "2015-02-04T22:17:21Z", 
                     "prompt": {
-                        "question": "<p>\n\t<span>In an <b>xterm</b > window launched from your window manager, you type <strong>exec gedit</strong>. What will happen when you exit from the <b>gedit</b> program?</span>\n</p>", 
+                        "question": "<p>\n\t<span>Which of the following commands will locate all program files on a computer on which the SUID bit is set?</span>\n</p>", 
                         "relatedLectureIds": [], 
                         "answers": [
-							"Your shell will be a <em>root</em> shell.", 
-							"The <em>gedit</em> program will terminate, but nothing else unusual will happen.",
-							"Your X session will terminate.",
-							"The xterm window will close.",
-							"A new instance of gedit will be launched."
+							"find / -type SUID", 
+							"find / -perm +4000 -type f",
+							"find / -perm +SUID -type f",
+							"find / -type +4000",
+							"find / -suid"
 						],
-						"feedbacks": ["Incorrect.", "Incorrect.", "Incorrect.", "Correct.", "Incorrect."]							
+						"feedbacks": ["Incorrect.", "Correct.", "Incorrect.", "Incorrect.", "Incorrect."]							
                     }, 
-                    "correct_response": ["d"], 
+                    "correct_response": ["b"], 
                     "score": 1.0, 
                     "updated": "2015-02-04T22:17:21Z", 
                     "old_assessment_type": null, 
-                    "question_plain": "In an xterm window launched from your window manager, you type exec gedit . What will happen when you exit from the gedit program?", 
+                    "question_plain": "Which of the following commands will locate all program files on a computer on which the SUID bit is set?", 
                     "related_lectures": []
                 },
                 {
@@ -212,14 +214,14 @@
                     "assessment_type": "multiple-choice", 
                     "created": "2015-02-04T22:17:21Z", 
                     "prompt": {
-                        "question": "<p>\n\t<span>What is the surest way to run a program (say, myprog) that’s located in the current working directory?</span>\n</p>", 
+                        "question": "<p>\n\t<span>The /etc/sudoers file on a computer includes the following line. What is its effect?<br/>%admin ALL=(ALL) ALL</span>\n</p>", 
                         "relatedLectureIds": [], 
                         "answers": [
-							"Type ./ followed by the program name: ./myprog.", 
-							"Type the program name alone: myprog.",
-							"Type run followed by the program name: run myprog.",
-							"Type /. followed by the program name: /.myprog.",
-							"Type the program name followed by an ampersand (&): myprog &."
+							"Members of the admin group may run all programs with root privileges by using sudo.", 
+							"Users in the admin user alias, defined earlier in the file, may run all programs with root privileges by using sudo.",
+							"The admin user alias is defined to include all users on the system.",
+							"The admin command alias is defined to include all commands.",
+							"The user admin may run all programs on the computer as root by using sudo."
 						],
 						"feedbacks": ["Correct.", "Incorrect.", "Incorrect.", "Incorrect.", "Incorrect."]							
                     }, 
@@ -227,7 +229,7 @@
                     "score": 1.0, 
                     "updated": "2015-02-04T22:17:21Z", 
                     "old_assessment_type": null, 
-                    "question_plain": "What is the surest way to run a program (say, myprog) that’s located in the current working directory?", 
+                    "question_plain": "The /etc/sudoers file on a computer includes the following line. What is its effect?\n%admin ALL=(ALL) ALL", 
                     "related_lectures": []
                 },
                 {
@@ -236,22 +238,22 @@
                     "assessment_type": "multiple-choice", 
                     "created": "2015-02-04T22:17:21Z", 
                     "prompt": {
-                        "question": "<p>\n\t<span>How does man display information by default on most Linux systems?</span>\n</p>", 
+                        "question": "<p>\n\t<span>Which command would you type, as root, to discover all the open network connections on a Linux computer?</span>\n</p>", 
                         "relatedLectureIds": [], 
                         "answers": [
-							"Using a custom X-based application.", 
-							"Using the Firefox Web browser.",
-							"Using the info browser.",
-							"Using the Vi editor.",
-							"Using the less pager."
+							"lsof -c a", 
+							"netstat -ap",
+							"ifconfig eth0",
+							"nmap -sT localhost",
+							"top -net"
 						],
-						"feedbacks": ["Incorrect.", "Incorrect.", "Incorrect.", "Incorrect.", "Correct."]							
+						"feedbacks": ["Incorrect.", "Correct.", "Incorrect.", "Incorrect.", "Incorrect."]							
                     }, 
-                    "correct_response": ["e"], 
+                    "correct_response": ["b"], 
                     "score": 1.0, 
                     "updated": "2015-02-04T22:17:21Z", 
                     "old_assessment_type": null, 
-                    "question_plain": "How does man display information by default on most Linux systems?", 
+                    "question_plain": "Which command would you type, as root, to discover all the open network connections on a Linux computer?", 
                     "related_lectures": []
                 },
                 {
@@ -260,22 +262,22 @@
                     "assessment_type": "multiple-choice", 
                     "created": "2015-02-04T22:17:21Z", 
                     "prompt": {
-                        "question": "<p>\n\t<span>You want to store the standard output of the ifconfig command in a text file (file.txt) for future reference, and you want to wipe out any existing data in the file. You do not  want to store standard error in this file. How can you accomplish these goals?</span>\n</p>", 
+                        "question": "<p>\n\t<span>A server/computer combination appears in both hosts.allow and hosts.deny. What’s the result of this configuration when TCP Wrappers runs?</span>\n</p>", 
                         "relatedLectureIds": [], 
                         "answers": [
-							"ifconfig < file.txt", 
-							"ifconfig >> file.txt",
-							"ifconfig > file.txt",
-							"ifconfig | file.txt",
-							"ifconfig 2> file.txt"
+							"TCP Wrappers refuses to run and logs an error in /var/log/messages.", 
+							"The system’s administrator is paged to decide whether to allow access.",
+							"hosts.deny takes precedence; the client is denied access to the server",
+							"hosts.allow takes precedence; the client is granted access to the server.",
+							"The client is granted access to the server if  no other client is currently accessing it."
 						],
-						"feedbacks": ["Incorrect.", "Incorrect.", "Correct.", "Incorrect.", "Incorrect."]							
+						"feedbacks": ["Incorrect.", "Incorrect.", "Incorrect.", "Correct.", "Incorrect."]							
                     }, 
-                    "correct_response": ["c"], 
+                    "correct_response": ["d"], 
                     "score": 1.0, 
                     "updated": "2015-02-04T22:17:21Z", 
                     "old_assessment_type": null, 
-                    "question_plain": "You want to store the standard output of the ifconfig command in a text file (file.txt) for future reference, and you want to wipe out any existing data in the file. You do not  want to store standard error in this file. How can you accomplish these goals?", 
+                    "question_plain": " A server/computer combination appears in both hosts.allow and hosts.deny. What’s the result of this configuration when TCP Wrappers runs?", 
                     "related_lectures": []
                 },
                 {
@@ -284,14 +286,14 @@
                     "assessment_type": "multiple-choice", 
                     "created": "2015-02-04T22:17:21Z", 
                     "prompt": {
-                        "question": "<p>\n\t<span>What is the effect of the following command?\n $ myprog &> input.txt</span>\n</p>", 
+                        "question": "<p>\n\t<span> When is the bind option of xinetd most useful?</span>\n</p>", 
                         "relatedLectureIds": [], 
                         "answers": [
-							"Standard error to myprog is taken from input.txt.", 
-							"Standard input to myprog is taken from input.txt.",
-							"Standard output and standard error from myprog are written to input.txt.",
-							"All of the above.",
-							"None of the above."
+							"When you want to run two servers on one port.", 
+							"When you want to specify computers by name rather than IP address.",
+							"When xinetd is running on a system with two network interfaces.",
+							"When resolving conflicts between different servers.",
+							"When xinetd manages a DNS server program."
 						],
 						"feedbacks": ["Incorrect.", "Incorrect.", "Correct.", "Incorrect.", "Incorrect."]							
                     }, 
@@ -299,7 +301,7 @@
                     "score": 1.0, 
                     "updated": "2015-02-04T22:17:21Z", 
                     "old_assessment_type": null, 
-                    "question_plain": "What is the effect of the following command?\n $ myprog &> input.txt", 
+                    "question_plain": " When is the bind option of xinetd most useful?", 
                     "related_lectures": []
                 },
                 {
@@ -308,22 +310,23 @@
                     "assessment_type": "multiple-choice", 
                     "created": "2015-02-04T22:17:21Z", 
                     "prompt": {
-                        "question": "<p>\n\t<span>How many commands can you pipe together at once?</span>\n</p>", 
+                        "question": "<p>\n\t<span> You’ve discovered that the Waiter program (a network server) is running inappropriately on your computer. You therefore locate its SysV startup script and shut it down by removing that script from your default runlevel. How can you further reduce the risk that the Waiter program will be abused by outsiders? (Select two.)</span>\n</p>", 
                         "relatedLectureIds": [], 
                         "answers": [
-							"2", 
-							"3",
-							"4",
-							"16",
-							"An arbitrary number."
+							"By blocking the Waiter program’s port using a firewall rule.", 
+							"By reading the Waiter program’s documentation to learn how to run it in stealth mode.",
+							"By tunneling the Waiter program’s port through SSH.",
+							"By uninstalling the Waiter package.",
+							"By uninstalling any clients associated with Waiter from the server computer.",
+							"A, D"
 						],
-						"feedbacks": ["Incorrect.", "Incorrect.", "Incorrect.", "Incorrect.", "Correct."]							
+						"feedbacks": ["Inorrect.", "Incorrect.", "Incorrect.", "Incorrect.", "Incorrect.", "Correct."]
                     }, 
-                    "correct_response": ["e"], 
+                    "correct_response": ["f"], 
                     "score": 1.0, 
                     "updated": "2015-02-04T22:17:21Z", 
                     "old_assessment_type": null, 
-                    "question_plain": "How many commands can you pipe together at once?", 
+                    "question_plain": " You’ve discovered that the Waiter program (a network server) is running inappropriately on your computer. You therefore locate its SysV startup script and shut it down by removing that script from your default runlevel. How can you further reduce the risk that the Waiter program will be abused by outsiders? (Select two.)", 
                     "related_lectures": []
                 },
                 {
@@ -332,14 +335,14 @@
                     "assessment_type": "multiple-choice", 
                     "created": "2015-02-04T22:17:21Z", 
                     "prompt": {
-                        "question": "<p>\n\t<span>You want to run an interactive script, gabby, which produces a lot of output in response to the user’s inputs. To facilitate future study of this script, you want to copy its output to a file. How might you do this?</span>\n</p>", 
+                        "question": "<p>\n\t<span>You want to use xinetd access controls to limit who may access a server that’s launched via xinetd. Specifically, only users on the 192.168.7.0/24 network block should be able to use that server. How may you do this?</span>\n</p>", 
                         "relatedLectureIds": [], 
                         "answers": [
-							"gabby > gabby-out.txt", 
-							"gabby | tee gabby-out.txt",
-							"gabby < gabby-out.txt",
-							"gabby &> gabby-out.txt",
-							"gabby `gabby-out.txt"
+							"Enter hosts_allow = 192.168.7.0/24 in the /etc/xinetd.d configuration file for the server in question.", 
+							"Enter only_from = 192.168.7.0/24 in the /etc/xinetd.d configuration file for the server in question.",
+							"Enter server  : 192.168.7., where server  is the server’s name, in the /etc/hosts.allow file.",
+							"Enter server  : 192.168.7., where server  is the server’s name, in the /etc/hosts.allow file.",
+							"Type iptables -L 192.168.7.0  to enable only users of 192.168.7.0/24 to access the server."
 						],
 						"feedbacks": ["Incorrect.", "Correct.", "Incorrect.", "Incorrect.", "Incorrect."]							
                     }, 
@@ -347,7 +350,7 @@
                     "score": 1.0, 
                     "updated": "2015-02-04T22:17:21Z", 
                     "old_assessment_type": null, 
-                    "question_plain": "You want to run an interactive script, gabby, which produces a lot of output in response to the user’s inputs. To facilitate future study of this script, you want to copy its output to a file. How might you do this?", 
+                    "question_plain": "You want to use xinetd access controls to limit who may access a server that’s launched via xinetd. Specifically, only users on the 192.168.7.0/24 network block should be able to use that server. How may you do this?", 
                     "related_lectures": []
                 },
                 {
@@ -356,22 +359,22 @@
                     "assessment_type": "multiple-choice", 
                     "created": "2015-02-04T22:17:21Z", 
                     "prompt": {
-                        "question": "<p>\n\t<span>A text-mode program, verbose, prints a lot of spurious “error” messages to standard error. How might you get rid of those messages while still interacting with the program?</span>\n</p>", 
+                        "question": "<p>\n\t<span>Of the following, which is the best password?</span>\n</p>", 
                         "relatedLectureIds": [], 
                         "answers": [
-							"verbose | quiet ", 
-							"verbose &> /dev/null",
-							"verbose 2> /dev/null",
-							"verbose > junk.txt",
-							"quiet-mode verbose"
+							"Odysseus", 
+							"iA71Oci^My~~~~~~",
+							"pickettomato",
+							"Denver2Colorado",
+							"123456"
 						],
-						"feedbacks": ["Incorrect.", "Incorrect.", "Correct.", "Incorrect.", "Incorrect."]							
+						"feedbacks": ["Incorrect.", "Correct.", "Incorrect.", "Incorrect.", "Incorrect."]							
                     }, 
-                    "correct_response": ["c"], 
+                    "correct_response": ["b"], 
                     "score": 1.0, 
                     "updated": "2015-02-04T22:17:21Z", 
                     "old_assessment_type": null, 
-                    "question_plain": "A text-mode program, verbose, prints a lot of spurious “error” messages to standard error. How might you get rid of those messages while still interacting with the program?", 
+                    "question_plain": "Of the following, which is the best password?", 
                     "related_lectures": []
                 },
                 {
@@ -380,14 +383,14 @@
                     "assessment_type": "multiple-choice", 
                     "created": "2015-02-04T22:17:21Z", 
                     "prompt": {
-                        "question": "<p>\n\t<span>How do the > and >> redirection operators differ?</span>\n</p>", 
+                        "question": "<p>\n\t<span>Which of the following types of attacks involves sending bogus email to lure unsuspecting individuals into divulging sensitive financial or other information?</span>\n</p>", 
                         "relatedLectureIds": [], 
                         "answers": [
-							"The > operator creates a new file or overwrites an existing one; the >> operator creates a new file or appends to an existing one.", 
-							"The > operator creates a new file or overwrites an existing one; the >> operator appends to an existing file or issues an error message if the specified file doesn’t exist.",
-							"The > operator redirects standard output; the >> operator redirects standard error.",
-							"The > operator redirects standard output; the >> operator redirects standard input.",
-							"The > operator writes to an existing file but fails if the file doesn’t exist; the >> operator writes to an existing file or creates a new one if it doesn’t already exist."
+							"Phishing", 
+							"Script Kiddies",
+							"Spoofing",
+							"Ensnaring",
+							"Hacking"
 						],
 						"feedbacks": ["Correct.", "Incorrect.", "Incorrect.", "Incorrect.", "Incorrect."]							
                     }, 
@@ -395,7 +398,7 @@
                     "score": 1.0, 
                     "updated": "2015-02-04T22:17:21Z", 
                     "old_assessment_type": null, 
-                    "question_plain": "How do the > and >> redirection operators differ?", 
+                    "question_plain": "Which of the following types of attacks involves sending bogus email to lure unsuspecting individuals into divulging sensitive financial or other information?", 
                     "related_lectures": []
                 },
                 {
@@ -404,22 +407,22 @@
                     "assessment_type": "multiple-choice", 
                     "created": "2015-02-04T22:17:21Z", 
                     "prompt": {
-                        "question": "<p>\n\t<span>What program would you use to display the end of a configuration file?</span>\n</p>", 
+                        "question": "<p>\n\t<span>Ordinary users report being unable to log onto a computer, but root has no problems doing so. What might you check for to explain this situation?</span>\n</p>", 
                         "relatedLectureIds": [], 
                         "answers": [
-							"uniq", 
-							"cut",
-							"tail",
-							"wc",
-							"fmt"
+							"A misbehaving syslogd daemon", 
+							"A login process that’s running as root",
+							"The presence of an /etc/nologin file",
+							"The presence of an SUID bit on /bin/login",
+							"Inappropriate use of shadow passwords"
 						],
-						"feedbacks": ["Incorrect.", "Incorrect.", "Correct.", "Incorrect.", "Incorrect."]							
+						"feedbacks": ["Incorrect.", "Incorrect.", "Correct.", "Incorrect.", "Incorrect."]
                     }, 
                     "correct_response": ["c"], 
                     "score": 1.0, 
                     "updated": "2015-02-04T22:17:21Z", 
                     "old_assessment_type": null, 
-                    "question_plain": "What program would you use to display the end of a configuration file?", 
+                    "question_plain": "Ordinary users report being unable to log onto a computer, but root has no problems doing so. What might you check for to explain this situation?", 
                     "related_lectures": []
                 },
                 {
@@ -428,22 +431,23 @@
                     "assessment_type": "multiple-choice", 
                     "created": "2015-02-04T22:17:21Z", 
                     "prompt": {
-                        "question": "<p>\n\t<span>What is the effect of the following command?\n$ pr report.txt | lpr </span>\n</p>", 
+                        "question": "<p>\n\t<span>Which servers might you consider retiring after activating an SSH server? (Select two.)</span>\n</p>", 
                         "relatedLectureIds": [], 
                         "answers": [
-							"The file report.txt is formatted for printing and sent to the lpr program.", 
-							"The files report.txt and lpr are combined together into one file and sent to standard output.",
-							"Tabs are converted to spaces in report.txt, and the result is saved in lpr.",
-							"The file report.txt is printed, and any error messages are stored in the file lpr.",
-							"None of the above."
+							"SMTP", 
+							"Telnet",
+							"FTP",
+							"TNTP",
+							"Samba",
+							"BC"
 						],
-						"feedbacks": ["Correct.", "Incorrect.", "Incorrect.", "Incorrect.", "Incorrect."]							
+						"feedbacks": ["Incorrect.", "Incorrect.", "Incorrect.", "Incorrect.", "Incorrect.", "Correct."]							
                     }, 
-                    "correct_response": ["a"], 
+                    "correct_response": ["f"], 
                     "score": 1.0, 
                     "updated": "2015-02-04T22:17:21Z", 
                     "old_assessment_type": null, 
-                    "question_plain": "What is the effect of the following command?\n$ pr report.txt | lpr ", 
+                    "question_plain": "Which servers might you consider retiring after activating an SSH server? (Select two.)", 
                     "related_lectures": []
                 },
                 {
@@ -452,23 +456,22 @@
                     "assessment_type": "multiple-choice", 
                     "created": "2015-02-04T22:17:21Z", 
                     "prompt": {
-                        "question": "<p>\n\t<span>Which of the following commands will number the lines in aleph.txt? (Select three.)</span>\n</p>", 
+                        "question": "<p>\n\t<span> You find that the ssh_host_dsa_key file in /etc/ssh has 0666 (-rw-rw-rw-) permissions. Your SSH server has been in operation for several months. Should you be concerned?</span>\n</p>", 
                         "relatedLectureIds": [], 
                         "answers": [
-							"fmt aleph.txt ", 
-							"nl aleph.txt",
-							"cat -b aleph.txt ",
-							"cat -n aleph.txt ",
-							"od -nl aleph.txt.",
-							"b, c, d"
+							"Yes", 
+							"No",
+							"Only if the ssh_host_dsa_key.pub file is also world-readable",
+							"Only if you’re launching SSH from a super server",
+							"Only if you’re using a laptop computer"
 						],
-						"feedbacks": ["Incorrect.", "Incorrect.", "Incorrect.", "Incorrect.", "Incorrect.", "Correct."]							
+						"feedbacks": ["Correct.", "Incorrect.", "Incorrect.", "Incorrect.", "Incorrect."]							
                     }, 
-                    "correct_response": ["f"], 
+                    "correct_response": ["a"], 
                     "score": 1.0, 
                     "updated": "2015-02-04T22:17:21Z", 
                     "old_assessment_type": null, 
-                    "question_plain": "Which of the following commands will number the lines in aleph.txt? (Select three.)", 
+                    "question_plain": " You find that the ssh_host_dsa_key file in /etc/ssh has 0666 (-rw-rw-rw-) permissions. Your SSH server has been in operation for several months. Should you be concerned?", 
                     "related_lectures": []
                 },
                 {
@@ -477,22 +480,22 @@
                     "assessment_type": "multiple-choice", 
                     "created": "2015-02-04T22:17:21Z", 
                     "prompt": {
-                        "question": "<p>\n\t<span></span>Which of the following commands will change all occurrences of dog in the file animals.txt to mutt in the screen display?</span>\n</p>", 
+                        "question": "<p>\n\t<span>For best SSH server security, how should you set the Protocol option in /etc/ssh/sshd_config?</span>\n</p>", 
                         "relatedLectureIds": [], 
                         "answers": [
-							"sed –s \"dog\" \"mutt\" animals.txt ", 
-							"grep –s \"dog||mutt\" animals.txt",
-							"sed 's/dog/mutt/g' animals.txt ",
-							"cat animals.txt | grep –c \"dog\" \"mutt\"",
-							"fmt animals.txt | cut 'dog' > 'mutt'"
+							"Protocol 1", 
+							"Protocol 2",
+							"Protocol 1,2",
+							"Protocol 2,1",
+							"Protocol *"
 						],
-						"feedbacks": ["Incorrect.", "Incorrect.", "Correct.", "Incorrect.", "Incorrect."]							
+						"feedbacks": ["Incorrect.", "Correct.", "Incorrect.", "Incorrect.", "Incorrect."]							
                     }, 
-                    "correct_response": ["c"], 
+                    "correct_response": ["b"], 
                     "score": 1.0, 
                     "updated": "2015-02-04T22:17:21Z", 
                     "old_assessment_type": null, 
-                    "question_plain": "Which of the following commands will change all occurrences of dog in the file animals.txt to mutt in the screen display?", 
+                    "question_plain": "For best SSH server security, how should you set the Protocol option in /etc/ssh/sshd_config?", 
                     "related_lectures": []
                 },
                 {
@@ -501,22 +504,22 @@
                     "assessment_type": "multiple-choice", 
                     "created": "2015-02-04T22:17:21Z", 
                     "prompt": {
-                        "question": "<p>\n\t<span></span>You’ve received an ASCII text file (longlines.txt) that uses no carriage returns within paragraphs but two carriage returns between paragraphs. The result is that your preferred text editor displays each paragraph as a very long line. How can you reformat this file so that you can more easily edit it (or a copy)?</span>\n</p>", 
+                        "question": "<p>\n\t<span>Why is it unwise to allow root to log on directly using SSH?</span>\n</p>", 
                         "relatedLectureIds": [], 
                         "answers": [
-							"sed 's/Ctrl-M/NL/' longlines.txt ", 
-							"fmt longlines.txt > longlines2.txt",
-							"cat longlines.txt > longlines2.txt",
-							"pr longlines.txt > longlines2.txt",
-							"grep longlines.txt > longlines2.txt"
+							"Disallowing direct root access means that the SSH server may be run by a non-root user, improving security.", 
+							"The root password should never be sent over a network connection; allowing root logins in this way is inviting disaster.",
+							"SSH stores all login information, including passwords, in a publicly readable file.",
+							"When logged on using SSH, root’s commands can be easily intercepted and duplicated by undesirable elements.",
+							"Somebody with the root password but no other password can then break into the computer."
 						],
-						"feedbacks": ["Incorrect.", "Correct.", "Incorrect.", "Incorrect.", "Incorrect."]							
+						"feedbacks": ["Incorrect.", "Incorrect.", "Incorrect.", "Incorrect.", "Correct."]
                     }, 
-                    "correct_response": ["b"], 
+                    "correct_response": ["e"], 
                     "score": 1.0, 
                     "updated": "2015-02-04T22:17:21Z", 
                     "old_assessment_type": null, 
-                    "question_plain": "You’ve received an ASCII text file (longlines.txt) that uses no carriage returns within paragraphs but two carriage returns between paragraphs. The result is that your preferred text editor displays each paragraph as a very long line. How can you reformat this file so that you can more easily edit it (or a copy)?", 
+                    "question_plain": "Why is it unwise to allow root to log on directly using SSH?", 
                     "related_lectures": []
                 },
                 {
@@ -525,22 +528,22 @@
                     "assessment_type": "multiple-choice", 
                     "created": "2015-02-04T22:17:21Z", 
                     "prompt": {
-                        "question": "<p>\n\t<span>Which of the following commands will print lines from the file world.txt that contain matches to changes and changed?</span>\n</p>", 
+                        "question": "<p>\n\t<span>You’ve downloaded a GPG public key from a Web site, into the file fredkey.pub. What must you do with this key to use it?</span>\n</p>", 
                         "relatedLectureIds": [], 
                         "answers": [
-							"grep change[ds] world.txt", 
-							"sed change[d-s] world.txt",
-							"od \"change'd|s'\" world.txt",
-							"cat world.txt changes changed ",
-							"find world.txt \"change(d|s)\""
+							"Type inspect-gpg fredkey.pub", 
+							"Type gpg --readkey fredkey.pub",
+							"Type import-gpg fredkey.pub",
+							"Type gpg --import fredkey.pub",
+							"Type gpg-import fredkey.pub"
 						],
-						"feedbacks": ["Correct.", "Incorrect.", "Incorrect.", "Incorrect.", "Incorrect."]					
+						"feedbacks": ["Incorrect.", "Incorrect.", "Incorrect.", "Correct.", "Incorrect."]							
                     }, 
-                    "correct_response": ["a"], 
+                    "correct_response": ["d"], 
                     "score": 1.0, 
                     "updated": "2015-02-04T22:17:21Z", 
                     "old_assessment_type": null, 
-                    "question_plain": "Which of the following commands will print lines from the file world.txt that contain matches to changes and changed?", 
+                    "question_plain": "You’ve downloaded a GPG public key from a Web site, into the file fredkey.pub. What must you do with this key to use it?", 
                     "related_lectures": []
                 },
                 {
@@ -549,44 +552,26 @@
                     "assessment_type": "multiple-choice", 
                     "created": "2015-02-04T22:17:21Z", 
                     "prompt": {
-                        "question": "<p>\n\t<span>Which of the following regular expressions will match the strings dog, dug, and various other strings but not dig?</span>\n</p>", 
+                        "question": "<p>\n\t<span> You want to send an encrypted message to an email correspondent. You both have GPG. What do you need to exchange before you can send your encrypted message?</span>\n</p>", 
                         "relatedLectureIds": [], 
                         "answers": [
-							"d.g", 
-							"d[ou]g",
-							"d[o-u]g",
-							"di*g",
-							"d.ig"
+							"Your correspondent must obtain your GPG public key.", 
+							"Your correspondent must obtain your GPG private key.",
+							"You must exchange private keys with your correspondent.",
+							"You must obtain your correspondent’s GPG private key.",
+							"You must obtain your correspondent’s GPG public key."
 						],
-						"feedbacks": ["Incorrect.", "Incorrect.", "Correct.", "Incorrect.", "Incorrect."]							
+						"feedbacks": ["Incorrect.", "Incorrect.", "Incorrect.", "Incorrect.", "Correct."]							
                     }, 
-                    "correct_response": ["c"], 
+                    "correct_response": ["e"], 
                     "score": 1.0, 
                     "updated": "2015-02-04T22:17:21Z", 
                     "old_assessment_type": null, 
-                    "question_plain": "Which of the following regular expressions will match the strings dog, dug, and various other strings but not dig?", 
-                    "related_lectures": []
-                },
-                 
-                {
-                    "_class": "assessment", 
-                    "id": 452752, 
-                    "assessment_type": "multiple-choice", 
-                    "created": "2015-02-21T13:03:48Z", 
-                    "prompt": {
-                        "question": "<p>\n\t<span>All your base are belong to us.</span>\n</p>", 
-                        "relatedLectureIds": [], 
-                        "answers": ["True", "False"]
-                    }, 
-                    "correct_response": ["a"], 
-                    "score": 1.0, 
-                    "updated": "2015-02-21T13:03:48Z", 
-                    "old_assessment_type": null, 
-                    "question_plain": "All your base are belong to us.",
+                    "question_plain": " You want to send an encrypted message to an email correspondent. You both have GPG. What do you need to exchange before you can send your encrypted message?", 
                     "related_lectures": []
                 }
             ],
-            "count": 21
+            "count": 20
         }
     </script>
     <script type=text/javascript>
@@ -598,7 +583,7 @@
                 throw $("#quiz_wrap").append("<h1>Error Loading Quiz</h1>"),
                 new Error(a)
             }
-            $("#quiz_wrap").append("<h1>Linux+ Chapter 1</h1>"), 
+            $("#quiz_wrap").append("<h1>Linux+ Chapter 10</h1>"), 
             $("#quiz_wrap").append("<h2>Questions: " + quizdata.count + "</h2>"), 
             $("#quiz_wrap").append('<button onclick="startQuiz()" id="start">Start Quiz</button>')
         }
